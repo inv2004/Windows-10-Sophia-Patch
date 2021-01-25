@@ -1,0 +1,16 @@
+processhacker
+7zip
+windows-terminal
+pwsh
+telegram
+nim
+vscode
+kitty
+python
+go
+potplayer
+rufus
+innounp
+skype
+teamviewer
+treesize-free
