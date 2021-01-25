@@ -1,6 +1,6 @@
 name: Patch
 
-on: [push, tag]
+on: [push]
 
 jobs:
   patch:
