@@ -1,3 +1,4 @@
 NetworkDiscovery -Disable
+WSL -Enable
 EnableWSL2
 WSLSwap -Disable
