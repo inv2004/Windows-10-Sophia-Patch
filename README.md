@@ -8,6 +8,7 @@ Expand-Archive .\Sophia.zip -DestinationPath .
 cd Sophia
 Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
 .\Sophia.ps1
+.\Step2.ps1
 ```
 
 Restart
@@ -15,5 +16,5 @@ Restart
 ```pwsh
 Set-ExecutionPolicy RemoteSigned -scope CurrentUser
 iwr -useb get.scoop.sh | iex
-.\scoopSet.ps1
+.\ScoopSet.ps1
 ```
