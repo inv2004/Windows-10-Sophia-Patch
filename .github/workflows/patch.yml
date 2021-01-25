@@ -9,9 +9,6 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/checkout@v2
-        repository: https://github.com/farag2/Windows-10-Sophia-Script/tree/master/Sophia
-        path: sophia
       - uses: jiro4989/setup-nim-action@v1
       - name: Patch
         run: nim c --run patch/patch.nim
