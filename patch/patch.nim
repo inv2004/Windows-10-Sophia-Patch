@@ -39,7 +39,7 @@ proc patch() =
   for l in lines(FILE):
     if toExclude.anyIt(l.startsWith(it)):
       script.add ("#PATCH " & l)
-    if toInclude.anyIt(l.startsWith(it)):
+    elif toInclude.anyIt(l.startsWith(it)):
       script.add (l[2..^1] & "  #PATCH")
     else:
       script.add l
