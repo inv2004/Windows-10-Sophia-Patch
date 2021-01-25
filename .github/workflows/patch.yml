@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: jiro4989/setup-nim-action@v1
       - name: Patch
-        run: nim c --run patch/patch.nim
+        run: nim c --d:ssl --run patch/patch.nim
       - name: Zip
         run: Compress-Archive -Path Sophia -DestinationPath Sophia.zip
       - name: Upload to release
