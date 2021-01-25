@@ -4,7 +4,6 @@ on: [push]
 
 jobs:
   patch:
-    needs: create_release
     runs-on: windows-latest
     timeout-minutes: 5
     steps:
