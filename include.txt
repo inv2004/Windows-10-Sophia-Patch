@@ -1,0 +1,3 @@
+NetworkDiscovery -Disable
+EnableWSL2
+WSLSwap -Disable

@@ -1,0 +1,27 @@
+name: Patch
+
+on: [push, tag]
+
+jobs:
+  patch:
+    needs: create_release
+    runs-on: windows-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+        repository: https://github.com/farag2/Windows-10-Sophia-Script/tree/master/Sophia
+        path: sophia
+      - uses: jiro4989/setup-nim-action@v1
+      - name: Patch
+        run: nim c --run patch/patch.nim
+      - name: Zip
+        run: Compress-Archive -Path Sophia -DestinationPath Sophia.zip
+      - name: Upload to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: Sophia.zip
+          tag: rolling
+          overwrite: true
+          asset_content_type: application/zip
