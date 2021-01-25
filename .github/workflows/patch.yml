@@ -13,6 +13,13 @@ jobs:
         run: nim c --d:ssl --run patch/patch.nim
       - name: Zip
         run: Compress-Archive -Path Sophia -DestinationPath Sophia.zip
+      - name: Delete Release
+        uses: dev-drprasad/delete-tag-and-release@v0.1.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          delete_release: true
+          tag_name: rolling
       - name: Upload to release
         uses: svenstaro/upload-release-action@v2
         with:
